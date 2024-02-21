@@ -69,7 +69,7 @@ module "vault" {
   enable_rbac_authorization   = true
   purge_protection_enabled    = true
   enabled_for_disk_encryption = false
-  principal_id                = ["7712b174-0f84-4a4c-a8e9-5fccfe394193"]
+  principal_id                = ["xxxx-xxx-4a4c-xxxx-xxxx"]
   role_definition_name        = ["Key Vault Administrator"]
 
 }
@@ -86,7 +86,7 @@ module "storage-with-cmk" {
   account_kind             = "BlockBlobStorage"
   account_tier             = "Premium"
   identity_type            = "UserAssigned"
-  object_id                = ["7712b174-0f84-4a4c-a8e9-5fccfe394193"]
+  object_id                = ["xxxxx-xxx-4a4c-xxxx-xxxxx"]
   account_replication_type = "ZRS"
 
   ###customer_managed_key can only be set when the account_kind is set to StorageV2 or account_tier set to Premium, and the identity type is UserAssigned.
