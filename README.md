@@ -24,13 +24,13 @@ for creating AZURE resources, and you can customize the inputs as needed. Below 
 
 ```hcl
 module "storage" {
-  source                        = "git::https://github.com/opsstation/terraform-azure-storage.git?ref=v1.0.0"
+  source                        = "git::https://github.com/yadavprakash/terraform-azure-storage.git?ref=v1.0.0"
   name                          = "app"
   environment                   = "test"
   default_enabled               = true
   resource_group_name           = module.resource_group.resource_group_name
   location                      = "North Europe"
-  storage_account_name          = "opsstation"
+  storage_account_name          = "yadavprakash"
   public_network_access_enabled = true
   ##   Storage Container
   containers_list = [
@@ -53,13 +53,13 @@ module "storage" {
 
 ```hcl
 module "storage_with_cmk" {
-  source                        = "git::https://github.com/opsstation/terraform-azure-storage.git?ref=v1.0.0"
+  source                        = "git::https://github.com/yadavprakash/terraform-azure-storage.git?ref=v1.0.0"
   name                     = "app"
   environment              = "test"
   label_order              = ["name", "environment", ]
   resource_group_name      = module.resource_group.resource_group_name
   location                 = module.resource_group.resource_group_location
-  storage_account_name     = "opsstation"
+  storage_account_name     = "yadavprakash"
   account_kind             = "BlockBlobStorage"
   account_tier             = "Premium"
   identity_type            = "UserAssigned"
@@ -83,14 +83,14 @@ module "storage_with_cmk" {
 This example demonstrates how to create various AZURE resources using the provided modules. Adjust the input values to suit your specific requirements.
 
 ## Examples
-For detailed examples on how to use this module, please refer to the [examples](https://github.com/opsstation/terraform-azure-storage/blob/master/_example) directory within this repository.
+For detailed examples on how to use this module, please refer to the [examples](https://github.com/yadavprakash/terraform-azure-storage/blob/master/_example) directory within this repository.
 
 ## License
-This Terraform module is provided under the **MIT** License. Please see the [LICENSE](https://github.com/opsstation/terraform-azure-storage/blob/master/LICENSE) file for more details.
+This Terraform module is provided under the **MIT** License. Please see the [LICENSE](https://github.com/yadavprakash/terraform-azure-storage/blob/master/LICENSE) file for more details.
 
 ## Author
 Your Name
-Replace **MIT** and **OpsStation** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
+Replace **MIT** and **yadavprakash** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -111,7 +111,7 @@ Replace **MIT** and **OpsStation** with the appropriate license and your informa
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/opsstation/terraform-azure-labels.git | v1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/yadavprakash/terraform-azure-labels.git | v1.0.0 |
 
 ## Resources
 

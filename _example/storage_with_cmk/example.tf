@@ -6,7 +6,7 @@ provider "azurerm" {
 ## Resource Group module call
 ##-----------------------------------------------------------------------------
 module "resource_group" {
-  source      = "git::https://github.com/opsstation/terraform-azure-resource-group.git?ref=v1.0.0"
+  source      = "git::https://github.com/yadavprakash/terraform-azure-resource-group.git?ref=v1.0.0"
   name        = "app"
   environment = "tested"
   location    = "North Europe"
@@ -17,7 +17,7 @@ module "resource_group" {
 ## Virtual Network module call.
 ##-----------------------------------------------------------------------------
 module "vnet" {
-  source              = "git::https://github.com/opsstation/terraform-azure-vnet.git?ref=v1.0.0"
+  source              = "git::https://github.com/yadavprakash/terraform-azure-vnet.git?ref=v1.0.0"
   name                = "app"
   environment         = "test"
   resource_group_name = module.resource_group.resource_group_name
@@ -29,7 +29,7 @@ module "vnet" {
 ## Subnet module call.
 ##-----------------------------------------------------------------------------
 module "subnet" {
-  source = "git::https://github.com/opsstation/terraform-azure-subnet.git?ref=v1.0.1"
+  source = "git::https://github.com/yadavprakash/terraform-azure-subnet.git?ref=v1.0.1"
 
   name                 = "app"
   environment          = "test"
@@ -58,7 +58,7 @@ module "subnet" {
 ##-----------------------------------------------------------------------------
 module "vault" {
   depends_on                  = [module.vnet]
-  source                      = "git::https://github.com/opsstation/terraform-azure-key-vault.git?ref=v1.0.0"
+  source                      = "git::https://github.com/yadavprakash/terraform-azure-key-vault.git?ref=v1.0.0"
   name                        = "app"
   environment                 = "test"
   sku_name                    = "standard"
